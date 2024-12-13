@@ -1,0 +1,36 @@
+services:
+  tsmapp:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://db:5432/tsm
+      SPRING_DATASOURCE_USERNAME: admin
+      SPRING_DATASOURCE_PASSWORD: admin
+    depends_on:
+      - db
+    networks:
+      - tsm_network
+
+  db:
+    image: postgres:15
+    environment:
+      POSTGRES_DB: tsm
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: admin
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - tsm_network
+
+volumes:
+  postgres_data:
+    driver: local
+
+networks:
+  tsm_network:
+    driver: bridge

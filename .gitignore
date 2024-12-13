@@ -1,24 +1,49 @@
-# Compiled class file
-*.class
+# Папки для IDE
+.idea/
+.vscode/
+*.iml
 
-# Log file
+# Папки для сборки
+/target/
+/build/
+
+# Лог-файлы
 *.log
 
-# BlueJ files
-*.ctxt
-
-# Mobile Tools for Java (J2ME)
-.mtj.tmp/
-
-# Package Files #
+# Классы и бинарные файлы
+*.class
 *.jar
 *.war
-*.nar
 *.ear
+*.nar
 *.zip
 *.tar.gz
 *.rar
 
-# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
+# Файлы для IDE (Eclipse, IntelliJ, NetBeans и т.д.)
+*.ctxt
+*.project
+*.classpath
+*.metadata
+
+# Папки для инструментов J2ME
+.mtj.tmp/
+
+# Файлы для виртуальной машины
 hs_err_pid*
 replay_pid*
+
+# Системные файлы
+.DS_Store
+Thumbs.db
+
+# Файлы Maven
+/.mvn/
+/mvnw
+/mvnw.cmd
+
+# Docker-файлы (если есть)
+docker-compose.override.yml
+
+# Папки для зависимости
+/.idea/
